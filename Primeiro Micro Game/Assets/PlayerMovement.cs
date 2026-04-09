@@ -50,7 +50,8 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
+    
+    
     public void TocarSomDano() => TocarSom(somDano);
     public void TocarSomMorte() => TocarSom(somMorte);
 }
