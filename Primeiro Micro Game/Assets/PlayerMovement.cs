@@ -1,29 +1,36 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private Rigidbody2D rb;
-    public float speed;
-    AudioSource audio;
+
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float jumpForce = 8f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        audio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
+        rb.linearVelocity = new Vector2(moveHorizontal * speed, rb.linearVelocity.y);
     }
-    private void OnTriggerEnter2D(Collider2D other){
-        if (other.tag == "Coletavel")
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Coletavel"))
         {
-            audio.Play();
+            GetComponent<AudioSource>().Play();
             GameController.Collect();
             Destroy(other.gameObject);
         }

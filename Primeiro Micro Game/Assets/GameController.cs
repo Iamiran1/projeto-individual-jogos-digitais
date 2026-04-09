@@ -10,7 +10,7 @@ public static class GameController
     }
     public static void Init()
     {
-        collectableCount = 4;
+        collectableCount = 11;
     }
 
     public static void Collect()
