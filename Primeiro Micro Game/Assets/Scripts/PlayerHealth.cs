@@ -33,4 +33,8 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+    public void InstantKill()
+    {
+        Health = 0;
+    }
 }
