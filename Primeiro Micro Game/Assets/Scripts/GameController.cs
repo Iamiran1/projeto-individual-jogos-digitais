@@ -9,12 +9,6 @@ public static class GameController
     public static float timeCount;
     public static bool timeOver;
 
-    public static void Restart()
-    {
-        collectableCount = 11;
-        timeCount = 60f;
-        timeOver = false;
-    }
 
     public static bool winner
     {
@@ -28,6 +22,8 @@ public static class GameController
 
     public static void Init()
     {
+        Time.timeScale = 1f;
+
         playerHealth = GameObject.FindObjectOfType<PlayerHealth>();
         collectableCount = 11;
         timeOver = false;

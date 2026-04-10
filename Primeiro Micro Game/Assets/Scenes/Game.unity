@@ -1554,7 +1554,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   endGamePanel: {fileID: 1431971406}
   healthBar: {fileID: 656451025}
-  gameOverPanel: {fileID: 305949617}
+  winnerTimeText: {fileID: 0}
+  InicialTimer: {fileID: 0}
+  endTimerText: {fileID: 0}
   timer: 60
   timerText: {fileID: 348940164}
 --- !u!114 &346151276
@@ -3120,7 +3122,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 346151280}
         m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
-        m_MethodName: IniciaJogo
+        m_MethodName: Reinciar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

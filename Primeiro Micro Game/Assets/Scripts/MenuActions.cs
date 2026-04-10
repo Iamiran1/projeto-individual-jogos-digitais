@@ -19,11 +19,4 @@ public class MenuActions : MonoBehaviour
         Application.Quit();
     }
     
-    public void Reinciar()
-    {
-        GameController.Restart();
-
-        SceneManager.LoadScene(1);
-    }
-
 }
