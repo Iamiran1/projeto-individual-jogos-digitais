@@ -4,10 +4,11 @@ public class UIManager : MonoBehaviour
 {
     public GameObject endGamePanel;
     public GameObject healthBar;
+    public GameObject gameOverPanel;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameController.Init();
     }
 
     // Update is called once per frame
@@ -15,7 +16,7 @@ public class UIManager : MonoBehaviour
     {
         if (GameController.gameOver)
         {
-            endGamePanel.SetActive(true);
+            gameOverPanel.SetActive(true);
             healthBar.SetActive(false);
         }
     }
