@@ -28,7 +28,6 @@ public class PlayerHealth : MonoBehaviour
             if (Health <= 0)
             {
                 
-                playerController.TocarSomMorte();
                 gameOver  = true;
             }
         }

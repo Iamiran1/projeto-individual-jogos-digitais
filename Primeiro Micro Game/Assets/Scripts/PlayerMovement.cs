@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip somPulo;
     [SerializeField] private AudioClip somColetavel;
     [SerializeField] private AudioClip somDano;
-    [SerializeField] private AudioClip somMorte;
 
     void Start()
     {
@@ -53,5 +52,4 @@ public class PlayerController : MonoBehaviour
     
     
     public void TocarSomDano() => TocarSom(somDano);
-    public void TocarSomMorte() => TocarSom(somMorte);
 }
