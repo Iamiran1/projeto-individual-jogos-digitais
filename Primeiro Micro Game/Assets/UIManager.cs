@@ -19,5 +19,12 @@ public class UIManager : MonoBehaviour
             gameOverPanel.SetActive(true);
             healthBar.SetActive(false);
         }
+
+        if (GameController.winner)
+        {
+            endGamePanel.SetActive(true);
+            healthBar.SetActive(false);
+
+        }
     }
 }
